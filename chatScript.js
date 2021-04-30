@@ -2,7 +2,7 @@
 const maxLocalMessages = 50;
 
 
-let remoteName = 'Mrkazik99'.toLocaleLowerCase();
+let remoteName = 'Mrkazik99';
 let remoteId = 0;
 let avatarBlob;
 let index = -1;
@@ -44,7 +44,7 @@ function insertIntoChat(type, id, user, content, timestamp, avatar) {
     messContent.classList.add('content');
     messTime.classList.add('timestamp');
     mentionCheck = content.toLocaleLowerCase().split(' ');
-    if(mentionCheck.indexOf(`@${remoteName}`) != -1 || mentionCheck.indexOf(`@${remoteId}`) != -1) {
+    if(mentionCheck.indexOf(`@${remoteName}`.toLowerCase()) != -1 || mentionCheck.indexOf(`@${remoteId}`) != -1) {
         messContent.classList.add('highlight');
     }
 
@@ -107,7 +107,6 @@ function bindKeys() {
     //connect this to "/setAvatar" command
 
     imageUrl = prompt('Give me some direct image URL');
-    // avatarUrl = prompt('Give me some image URL');
     if(imageUrl != '') {
         image = new Image();
         let canvas = document.createElement('canvas');
@@ -118,7 +117,7 @@ function bindKeys() {
             canvas.width = 100;
             ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, 100, 100);
             ctx.canvas.toBlob(function(blob) {
-                avatarBlob = blob;
+                avatarBlob = blob; //Your DB needs to store only this one value to create avatar.
             });
         }
         image.crossOrigin = "";
