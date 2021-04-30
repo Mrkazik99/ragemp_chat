@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.hidden {
+    display: none!important;
+}
+
+html {
+    height:100vh;
+    width:100vw;
+    margin:0;
+    overflow:hidden;
+}
+
+body {
+    height:100%;
+    width:100%;
+    margin:0;
+    overflow:hidden;
+}
+
+#chat {
+    max-height:50%;
+    height:50%;
+    width:30%;
+    background-color:rgba(0,0,0,0.5);
+    padding-top:1%;
+    overflow:auto;
+    overflow-wrap: unset;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+#chatInputContainer {
+    height:5%;
+    width:30%;
+    padding:0.5%;
+}
+
+#chatInput {
+    width:100%;
+    height:100%;
+    border-radius:5px;
+}
+
+.chatItem {
+    width:95%;
+    height:fit-content;
+    position:relative;
+    margin: 5px auto;
+    display:grid;
+    grid-template-columns:10% 85%;
+    grid-gap:4.5%;
+}
+
+.avatar {
+    height:100%;
+    margin:0;
+}
+
+.avatar img {
+    width:100%;
+    height:100%;
+    padding:2px;
+    border-radius:50px;
+    border:1px solid white;
+    background-color:rgba(255,255,255,0.4);
+    object-fit:cover;
+}
+
+.message {
+    position: relative;
+    height:fit-content;
+}
+
+.messInfos {
+    display:inline-flex;
+}
+
+.marker {
+    width:fit-content;
+    margin:0;
+    margin-right:5px!important;
+    border-radius: 5px 5px 0 0;
+    padding:2px;
+}
+
+/* Chat Item Colors */
+
+.author {
+    width:fit-content;
+    margin:0;
+    margin-right:5px!important;
+    border-radius: 5px 5px 0 0;
+    background-color: darkgray;
+    padding:2px;
+}
+
+.content {
+    background-color: darkgray;
+    border-radius: 0 5px 5px 5px;
+    margin:0;
+    padding:2px;
+    padding-right:10%;
+}
+
+.timestamp {
+    position:absolute;
+    bottom:-10px;
+    right:-5px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin:0;
+    padding:2px;
+}
+
+.highlight {
+    border:2px solid gold;
+}
+
+/* Messages markers colours */
+
+.GlobalMarker {
+    background-color: gold;
+}
+
+.NotificationMarker {
+    background-color: red;
+}
